@@ -1,4 +1,3 @@
-'use strict';
 var gulp = require('gulp'),
     lazypipe = require('lazypipe'),
     src = {},
@@ -7,7 +6,6 @@ var gulp = require('gulp'),
     $ = require('gulp-load-plugins')();
 
 function cleanCache(cacheName) {
-    /*jslint unparam:true*/
     return lazypipe().pipe(through2.obj, function (file, enc, cb) {
         if (file.event === 'unlink') {
             delete $.cached.caches[cacheName][file.path];
